@@ -35,7 +35,7 @@ class Aggregate {
 class StudentList : public Aggregate {
   public:
     StudentList() {};
-    StudentList(int count) { students = std::vector<Student>(count); };
+    StudentList(int count) { students = new Student[count]; };
 
     void add(Student student) {
         students[last] = student;
@@ -47,7 +47,7 @@ class StudentList : public Aggregate {
     std::shared_ptr<Iterator> iterator() override;
     
   protected:
-    std::vector<Student> students;
+    Student* students;
     
   private:
     int last = 0;
@@ -69,6 +69,14 @@ class StudentListIterator : public Iterator {
     StudentList student_list;
 };
 
+class NewVeteranStudentList : public Aggregate {
+    
+};
+
+class NewVetanStudentListIterator : public Iterator {
+    
+};
+    
 
 class Teacher {
   protected:
