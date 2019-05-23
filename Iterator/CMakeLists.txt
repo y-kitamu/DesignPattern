@@ -1,6 +1,7 @@
 set(pattern iterator)
 
-add_library(${pattern} iterator.cpp)
+# add_library(${pattern} iterator.cpp)
+add_library(${pattern} iterator2.cpp)
 
 file(GLOB file_list test_*.cpp)
 

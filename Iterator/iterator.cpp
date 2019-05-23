@@ -12,7 +12,7 @@ MyStudentList::MyStudentList() : StudentList(5) {
 
 
 Iterator MyStudentList::iterator() {
-    return MyStudentListIterator(*this);
+    // return MyStudentListIterator(*this);
 }
 
 

@@ -34,7 +34,7 @@ class StudentList {
         students = std::vector<Student>(student_count);
     }
 
-    virtual Iterator iterator() = 0;
+    // virtual Iterator iterator() = 0;
 
     void add(const Student &student) {
         students[last] = student;
