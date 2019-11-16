@@ -8,3 +8,12 @@ MACRO(ADD_SUBDIRS)
     ENDIF()
   ENDFOREACH()
 ENDMACRO()
+
+MACRO(ADD_TEST)
+  file(GLOB file_list "test_*.cpp")
+
+  foreach(fname IN LISTS file_list)
+    get_filename_component(basename ${fname} NAME_WE)
+    add_executable(${module_name}_${basename} ${fname})
+  endforeach()
+ENDMACRO()  
