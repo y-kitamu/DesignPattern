@@ -27,7 +27,7 @@ class Aggregate {
     T getAt(int index) { return members[index]; }
     void append(T item) {
         if (members.size() == last) {
-            members.append(item);
+            members.emplace_back(item);
         } else {
             members[last] = item;
         }
