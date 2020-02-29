@@ -19,15 +19,10 @@ namespace dp {
 
 class Factory {
   public:
-    template <class T>
-    static std::shared_ptr<Factory> getFactory() {
-        std::shared_ptr<Factory> factory;
-        factory = std::make_shared<T>();
-        return factory;
-    }
     virtual std::shared_ptr<Link> createLink(std::string caption, std::string url) = 0;
-    virtual std::shared_ptr<Tray> createTray(std::string caption);
-    virtual std::shared_ptr<Page> createPage(std::string title, std::string author);
+    virtual std::shared_ptr<Tray> createTray(std::string caption) = 0;
+    virtual std::shared_ptr<Page> createPage(std::string title, std::string author) = 0;
+    virtual ~Factory() {}
 };
 
 }
