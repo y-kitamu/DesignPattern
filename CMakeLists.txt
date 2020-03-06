@@ -16,12 +16,6 @@ include(./cmake/utility.cmake)
 
 set(EXTERNAL_LIBS "" CACHE INTERNAL "")
 
-if (EXISTS "/home/kitamura/lib/boost_1_67_0")
-  set(BOOST_ROOT "/home/kitamura/lib/boost_1_67_0")
-elseif (EXISTS "/home/kitamura/lib/boost/")
-  set(BOOST_ROOT "/home/kitamura/lib/boost")
-endif()
-# message("BOOST_ROOT : ${BOOST_ROOT}")
 find_package(Boost REQUIRED COMPONENTS system filesystem)
 set(EXTERNAL_LIBS ${EXTERNAL_LIBS} Boost::system Boost::filesystem CACHE INTERNAL "")
 
